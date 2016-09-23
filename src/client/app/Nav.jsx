@@ -39,7 +39,7 @@ export default function Nav (props) {
           </div>
            <ul className="nav navbar-nav navbar-right">
               <li><NavLink to="/login" >Login</NavLink></li>
-              <li><NavLink to="/create-account" >Create Account</NavLink></li>
+              <li><NavLink to="/create-user" >Create Account</NavLink></li>
            </ul>
        </div>
 

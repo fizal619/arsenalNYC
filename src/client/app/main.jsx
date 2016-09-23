@@ -10,11 +10,13 @@ import { Link } from 'react-router'
 
 import LoginUser from './LoginUser.jsx'
 import NotFound from './NotFound.jsx'
+import CreateUser from './CreateUser.jsx'
 
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path='/' component={App}>
       <Route path='login' component={LoginUser} />
+      <Route path='create-user' component={CreateUser}/>
       <Route path="*" component={NotFound} />
     </Route>
   </Router>
