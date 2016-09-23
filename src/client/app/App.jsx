@@ -13,8 +13,11 @@ export default class App extends React.Component {
     }
   }
 
-  changeLogInStatus(e){
-    e.preventDefault();
+  changeLogInStatus(){
+    let userStatus = !this.state.userLoggedIn
+    this.setState({
+      userLoggedIn: userStatus
+    })
     console.log('yas!')
   }
 
@@ -23,11 +26,12 @@ export default class App extends React.Component {
       <container>
         <header>
           <Nav
-          userStatus={this.state.userLoggedIn}
-          changeStatus={this.changeLogInStatus.bind(this)} />
+          userStatus={this.state.userLoggedIn} />
         </header>
         <div className="container">
-          {this.props.children}
+          {this.props.children && React.cloneElement(this.props.children, {
+            changeStatus:this.changeLogInStatus.bind(this)
+            })}
         </div>
         <pre>{JSON.stringify(this.state, null, 2)}</pre>
       </container>

@@ -6759,6 +6759,9 @@ body {
   padding-top: 100px;
    }
 
+.heading {
+  margin-top: 30%;
+}
 ul, li {
   list-style-type: none;
 }
