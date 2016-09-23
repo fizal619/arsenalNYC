@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function LoginUser (props){
+const LoginUser = props =>
   <div>
     <section className="col-md-8 col-md-offset-2">
       <form action="post">
@@ -9,12 +9,13 @@ export default function LoginUser (props){
           <input className='form-control' type="text" name='username' placeholder="Enter User Name" required/>
         </div>
         <div className='form-group'>
-          <label tyoe='text'>Password</label>
+          <label type='text'>Password</label>
           <input type="password" className='form-control' name='password_digest' placeholder="Enter a password" required/>
         </div>
         <button className='btn btn-success' type='submit'>Login</button>
       </form>
     </section>
   </div>
-}
+
+export default LoginUser;
 
