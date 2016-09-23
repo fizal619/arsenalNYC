@@ -29,6 +29,7 @@ export default class App extends React.Component {
         <div className="container">
           {this.props.children}
         </div>
+        <pre>{JSON.stringify(this.state, null, 2)}</pre>
       </container>
       )
   }
