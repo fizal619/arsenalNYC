@@ -9,8 +9,20 @@ export default class App extends React.Component {
     super();
 
     this.state = {
-      userLoggedIn: false
+      userLoggedIn: false,
+      events: []
     }
+  }
+
+   componentDidMount(){
+    firebase.database().ref('events/').on('value', (snapshot)=> {
+      const currentevents = snapshot.val()
+      if (currentevents != null){
+        this.setState({
+          events: currentevents
+        })
+      }
+    })
   }
 
   changeLogInStatus(){
@@ -31,7 +43,8 @@ export default class App extends React.Component {
         </header>
         <div className="container">
           {this.props.children && React.cloneElement(this.props.children, {
-            changeStatus:this.changeLogInStatus.bind(this)
+            changeStatus:this.changeLogInStatus.bind(this),
+            upcomingEvents:this.state.events
             })}
         </div>
         <pre>{JSON.stringify(this.state, null, 2)}</pre>
