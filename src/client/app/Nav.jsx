@@ -16,8 +16,8 @@ export default function Nav (props) {
           </ul>
             </div>
              <ul className="nav navbar-nav navbar-right">
-               <li><NavLink to="/logout" >Log Out</NavLink></li>
-               <li><NavLink to="/user-profile" >Profile</NavLink></li>
+               <li><NavLink onClick={props.changeStatus} to="/" >Log Out</NavLink></li>
+               <li><NavLink to="/user/profile" >Profile</NavLink></li>
              </ul>
          </div>
 
@@ -39,7 +39,7 @@ export default function Nav (props) {
           </div>
            <ul className="nav navbar-nav navbar-right">
               <li><NavLink to="/login" >Login</NavLink></li>
-              <li><NavLink to="/create-user" >Create Account</NavLink></li>
+              <li><NavLink to="/create-user" >Sign Up</NavLink></li>
            </ul>
        </div>
 

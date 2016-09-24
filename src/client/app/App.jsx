@@ -26,7 +26,8 @@ export default class App extends React.Component {
       <container>
         <header>
           <Nav
-          userStatus={this.state.userLoggedIn} />
+          userStatus={this.state.userLoggedIn}
+          changeStatus={this.changeLogInStatus.bind(this)} />
         </header>
         <div className="container">
           {this.props.children && React.cloneElement(this.props.children, {
