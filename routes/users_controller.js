@@ -3,10 +3,10 @@
 const router = require('express').Router();
 
 
-// / route
+// / route /api/users
 router.get('/', function(req,res){
   res.send('route /api/users');
-}) //end /
+}) //end /api/users
 
 
 //export it
