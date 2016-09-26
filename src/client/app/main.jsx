@@ -1,4 +1,5 @@
 'use strict'
+// require('../js/firebaseScript.js')
 import App from './App.jsx';
 require('bootstrap/dist/css/bootstrap.css');
 require('../css/styles.css');
@@ -24,3 +25,5 @@ ReactDOM.render((
     </Route>
   </Router>
   ), document.getElementById('container'))
+
+
