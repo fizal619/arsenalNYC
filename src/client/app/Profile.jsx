@@ -1,4 +1,23 @@
 import React from 'react'
+import Dropdown from 'react-dropdown'
+
+const options = [
+  { value: 'one', label: 'One' },
+  { value: 'two', label: 'Two' },
+  {
+   type: 'group', name: 'group1', items: [
+     { value: 'three', label: 'Three' },
+     { value: 'four', label: 'Four' }
+   ]
+  },
+  {
+   type: 'group', name: 'group2', items: [
+     { value: 'five', label: 'Five' },
+     { value: 'six', label: 'Six' }
+   ]
+  }
+]
+const defaultOption = options[0]
 
 export default class Profile extends React.Component {
 
@@ -7,6 +26,8 @@ export default class Profile extends React.Component {
     return (
       <div>
         <h1 className='heading'>This is the profile page!!</h1>
+          <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
+        {/*<div className="dropdown">
         <div class="btn-group">
           <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
@@ -18,7 +39,6 @@ export default class Profile extends React.Component {
             </ul>
           </div>
         </div>
-        {/*<div className="dropdown">
          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown button
         </button>
