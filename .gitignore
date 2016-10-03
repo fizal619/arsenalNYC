@@ -38,6 +38,7 @@ node_modules
 # distribution files
 # dist
 
+*config.json
 
 #the key
 set myKey = mXFXHqCXmmnrRVgD

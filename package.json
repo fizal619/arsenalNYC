@@ -32,10 +32,13 @@
     "jsonwebtoken": "^7.1.6",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
+    "pg-hstore": "^2.3.2",
     "pg-promise": "^5.2.4",
     "react-dropdown": "^1.1.0",
     "react-router-form": "^1.0.2",
-    "reactfire": "^1.0.0"
+    "reactfire": "^1.0.0",
+    "sequelize": "^3.24.3",
+    "sequelize-cli": "^2.4.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
