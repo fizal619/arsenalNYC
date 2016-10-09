@@ -1,4 +1,19 @@
 'use strict'
+
+/*
+
+TODO:
+
+-implement passportjs for token generation & validation.
+- /signup <---- done?
+- /login  <---- to generate token 
+- /authenticate   <---- to be used to act as a gateway to restricted endpoints
+
+*/
+
+
+
+
 const bcrypt = require('bcrypt')
 const salt = bcrypt.genSaltSync(10)
 const pg = require('pg-promise')({})
@@ -23,9 +38,9 @@ module.exports = {
 		createSecure(req.body.password)
 			.then(hash => {
 				_db.one(`
-          INSERT INTO users (email, password_hash)
-          VALUES ($1, $2)
-          returning *;`, [req.body.email, hash])
+          INSERT INTO users (member_id, fname, lname, city, state, birthday, email, password_hash)
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+          returning *;`, [parseInt(req.body.memberId), req.body.fname, req.body.lname, req.body.city, req.body.state, req.body.birthday, req.body.email, hash])
 					.then(newUser => {
 						console.log(newUser)
 						res.user = newUser;
