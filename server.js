@@ -21,7 +21,7 @@ app.use(bobbyParser.urlencoded( {extended: false}));
 
 //ROUTES!
 
-app.use('/api/users', userController);
+app.use('/api/user', userController);
 
 //END ROUTES!
 
